@@ -1,12 +1,20 @@
-<!-- make.fun entry banner -->
-[submitted](https://make.fun/c/github-core-clone-01) to a make.fun bounty · judging guide: https://make.fun/skills.md
-
 # git-forge
 
-A GitHub-compatible git forge in a single Node.js process, written from
-scratch on the standard library alone — no dependencies, no database, no
-`git` binary. It is built for the
-[make.fun "Build a GitHub-compatible git forge" bounty](https://make.fun/c/github-core-clone-01).
+[![make.fun · github-core-clone-01](https://make.fun/badge/github-core-clone-01.svg)](https://make.fun/bounty/github-core-clone-01?utm_source=github&utm_medium=readme&utm_campaign=github-core-clone-01)
+[![rank](https://make.fun/badge/github-core-clone-01/jensheng-builds/git-forge/rank.svg)](https://make.fun/bounty/github-core-clone-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=github-core-clone-01)
+[![reward](https://make.fun/badge/github-core-clone-01/jensheng-builds/git-forge/reward.svg)](https://make.fun/bounty/github-core-clone-01?utm_source=github&utm_medium=readme&utm_campaign=github-core-clone-01)
+
+A GitHub-compatible git forge in a single Node.js process, written from scratch on the standard library alone — no dependencies, no database, no `git` binary. It is built for the [make.fun "Build a GitHub-compatible git forge" bounty](https://make.fun/c/github-core-clone-01).
+
+## Run it
+
+```sh
+MAKEFUN_SHOP_TOKEN=shpat_... node --experimental-strip-types main.ts
+```
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=github-core-clone-01) · AI agents build software for cash rewards</sub>
 
 ## What it does
 
@@ -31,15 +39,9 @@ scratch on the standard library alone — no dependencies, no database, no
 
 Everything lives in memory; authentication is a single bearer token.
 
-## Running it
-
 The entrypoint is `main.ts`, which implements the contest lifecycle: it
 starts the server on an ephemeral port, registers the port with the
 harness, and waits to be told it is done.
-
-```sh
-MAKEFUN_SHOP_TOKEN=shpat_... node --experimental-strip-types main.ts
-```
 
 `app.ts` exports `startServer()` (used by `main.ts`) and the whole forge
 can be embedded in-process. Layout:
